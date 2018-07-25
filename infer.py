@@ -30,9 +30,9 @@ rl_model_init = rl_model(len(vocab_list), max_seq_len=50, batch_size=1, sess=ses
                                  mode="infer", reuse=True)
 
 # Define weights path of the models
-pre_weights_path = args.data_folder + "/generator_weights_pre/"
-ael_weights_path = args.data_folder + "/generator_weights_ael/"
-rl_weights_path = args.data_folder + "/generator_weights_rl/"
+pre_weights_path = args.data_folder + "generator_weights_pre/"
+ael_weights_path = args.data_folder + "generator_weights_ael/"
+rl_weights_path = args.data_folder + "generator_weights_rl/"
 
 # Initialize safer
 saver_generator = tf.train.Saver(tf.trainable_variables())
@@ -87,4 +87,5 @@ def do_login():
 
 
 # Run server
-run(host='0.0.0.0', port=8080, debug=True)
+print("Server running. Navigate to http://0.0.0.0/infer")
+run(host='0.0.0.0', port=8080)

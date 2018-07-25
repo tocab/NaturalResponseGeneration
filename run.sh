@@ -1,0 +1,1 @@
+python infer.py -d data_folder/
